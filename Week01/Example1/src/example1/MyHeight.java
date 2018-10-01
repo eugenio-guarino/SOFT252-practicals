@@ -9,19 +9,20 @@ package example1;
  *
  * @author eguarino
  */
-public class Example1 {
+public class MyHeight {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        int cms = 170;
+        int totalInches = (int)Math.round(cms / 2.54);
         
-        int day = 22;
+        int feet = totalInches / 12;
+        int inches = totalInches % 12;
         
-        System.out.println("Hello World!");
-        System.out.println("The date today is " + day);
-        System.out.println(true);
-        System.exit(0);
+        System.out.println("Your height is " + feet + " feet and " + inches+ " inches");
+        
     }
     
 }
