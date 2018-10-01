@@ -72,8 +72,18 @@ public class Banking extends javax.swing.JFrame {
         lblAmount.setText("Amount");
 
         btnDeposit.setText("Deposit");
+        btnDeposit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDepositActionPerformed(evt);
+            }
+        });
 
         btnWithdraw.setText("Withdraw");
+        btnWithdraw.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnWithdrawActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -191,6 +201,14 @@ public class Banking extends javax.swing.JFrame {
     private void txtBalanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBalanceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBalanceActionPerformed
+
+    private void btnDepositActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDepositActionPerformed
+        doDeposit();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDepositActionPerformed
+
+    private void btnWithdrawActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWithdrawActionPerformed
+        doWithdrawal();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnWithdrawActionPerformed
 
     /**
      * @param args the command line arguments
