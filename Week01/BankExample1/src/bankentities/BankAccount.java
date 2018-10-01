@@ -10,5 +10,8 @@ package bankentities;
  * @author Eugen
  */
 public class BankAccount {
+    private double balance;
+    private double overdraft;
+    private String holder; 
     
 }
