@@ -4,18 +4,25 @@
  * and open the template in the editor.
  */
 package bankgui;
+import bankentities.BankAccount;
 
 /**
  *
  * @author Eugen
  */
 public class Banking extends javax.swing.JFrame {
+    
+    private BankAccount ba;
 
     /**
      * Creates new form Banking
      */
     public Banking() {
         initComponents();
+        ba  = new BankAccount("Eugenio Guarino");
+        txtBalance.setText("" + ba.getBalance());
+        txtOverdraft.setText("" + ba.getOverdraft());
+        txtHolder.setText(ba.getHolder());
     }
 
     /**
@@ -39,6 +46,7 @@ public class Banking extends javax.swing.JFrame {
         txtBalance = new javax.swing.JTextField();
         txtOverdraft = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        txtHolder = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,7 +74,7 @@ public class Banking extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnDeposit)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnWithdraw)
                 .addGap(21, 21, 21))
         );
@@ -130,6 +138,8 @@ public class Banking extends javax.swing.JFrame {
 
         jButton1.setText("Exit");
 
+        txtHolder.setEditable(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -141,7 +151,8 @@ public class Banking extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(lblTitle)
                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtHolder, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -149,7 +160,9 @@ public class Banking extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(lblTitle)
-                .addGap(18, 18, 18)
+                .addGap(4, 4, 4)
+                .addComponent(txtHolder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -212,6 +225,7 @@ public class Banking extends javax.swing.JFrame {
     private javax.swing.JLabel lblTitle;
     private javax.swing.JTextField txtAmount;
     private javax.swing.JTextField txtBalance;
+    private javax.swing.JTextField txtHolder;
     private javax.swing.JTextField txtOverdraft;
     // End of variables declaration//GEN-END:variables
 }
