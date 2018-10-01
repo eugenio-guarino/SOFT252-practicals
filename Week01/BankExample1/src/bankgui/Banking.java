@@ -5,6 +5,7 @@
  */
 package bankgui;
 import bankentities.BankAccount;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -26,17 +27,32 @@ public class Banking extends javax.swing.JFrame {
     }
     
     private void doDeposit() {
-        int amount = Integer.parseInt(txtAmount.getText());
-        ba.depositMoney(amount);
-        txtBalance.setText("" + ba.getBalance());
-        txtAmount.setText("");
+        try{
+            int amount = Integer.parseInt(txtAmount.getText());
+            ba.depositMoney(amount);
+            txtBalance.setText("" + ba.getBalance());
+            txtAmount.setText("");
+        }
+        catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Please enter numbers only", "Error in amount", JOptionPane.ERROR_MESSAGE);
+        }
    } 
     
     private void doWithdrawal() {
-        int amount = Integer.parseInt(txtAmount.getText());
-        ba.depositMoney(amount);
-        txtBalance.setText("" + ba.getBalance());
-        txtAmount.setText("");
+
+        try{
+            int amount = Integer.parseInt(txtAmount.getText());
+            boolean fundsOK = ba.withdrawMoney(amount);
+            if (fundsOK)
+                txtBalance.setText("" + ba.getBalance());
+            else
+                JOptionPane.showMessageDialog(this, "Insufficent funds available\n" + "withdrawal not actioned", "Insufficent funds", JOptionPane.INFORMATION_MESSAGE);
+            
+            txtAmount.setText("");
+        }
+        catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Please enter numbers only", "Error in amount", JOptionPane.ERROR_MESSAGE);
+        }
    } 
 
     /**
@@ -161,6 +177,11 @@ public class Banking extends javax.swing.JFrame {
         );
 
         jButton1.setText("Exit");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         txtHolder.setEditable(false);
 
@@ -209,6 +230,10 @@ public class Banking extends javax.swing.JFrame {
     private void btnWithdrawActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWithdrawActionPerformed
         doWithdrawal();        // TODO add your handling code here:
     }//GEN-LAST:event_btnWithdrawActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        System.exit(0);        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -15,7 +15,7 @@ public class BankAccount {
     private String holder; 
     
     public BankAccount (String Holder) {
-        this.holder = holder;
+        this.holder = Holder;
         this.overdraft = 500;
         this.balance = 100;
     }
