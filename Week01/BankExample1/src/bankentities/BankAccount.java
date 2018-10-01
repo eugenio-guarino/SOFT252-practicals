@@ -34,4 +34,19 @@ public class BankAccount {
         }
     }
     
+    public double getBalance(){
+        return balance;
+    }
+    
+    public String getHolder(){
+        return holder;
+    }
+    
+    public double getOverdraft(){
+        return overdraft;
+    }
+    
+    public void setOverdraft(int overdraft){
+        this.overdraft = overdraft;
+    }
 }
