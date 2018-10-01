@@ -14,4 +14,10 @@ public class BankAccount {
     private double overdraft;
     private String holder; 
     
+    public BankAccount (String Holder) {
+        this.holder = holder;
+        this.overdraft = 500;
+        this.balance = 100;
+    }
+    
 }
