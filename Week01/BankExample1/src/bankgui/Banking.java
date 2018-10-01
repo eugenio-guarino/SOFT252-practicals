@@ -24,6 +24,20 @@ public class Banking extends javax.swing.JFrame {
         txtOverdraft.setText("" + ba.getOverdraft());
         txtHolder.setText(ba.getHolder());
     }
+    
+    private void doDeposit() {
+        int amount = Integer.parseInt(txtAmount.getText());
+        ba.depositMoney(amount);
+        txtBalance.setText("" + ba.getBalance());
+        txtAmount.setText("");
+   } 
+    
+    private void doWithdrawal() {
+        int amount = Integer.parseInt(txtAmount.getText());
+        ba.depositMoney(amount);
+        txtBalance.setText("" + ba.getBalance());
+        txtAmount.setText("");
+   } 
 
     /**
      * This method is called from within the constructor to initialize the form.
