@@ -20,4 +20,8 @@ public class BankAccount {
         this.balance = 100;
     }
     
+    public void depositMoney(int amount) {
+        balance += amount;
+    }
+    
 }
