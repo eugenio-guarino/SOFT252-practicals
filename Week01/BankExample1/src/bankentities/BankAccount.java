@@ -22,6 +22,16 @@ public class BankAccount {
     
     public void depositMoney(int amount) {
         balance += amount;
+        
+    }
+    
+    public boolean withdrawMoney (int amount){
+        if ((balance + overdraft) < amount)
+            return false;
+        else {
+            balance -= amount;
+            return true;
+        }
     }
     
 }
