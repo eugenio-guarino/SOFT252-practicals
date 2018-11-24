@@ -4,6 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Eugen/Desktop/git/soft252/Week07/PubSimulation%20with%20Factory%20Pattern/src/model/MakeTea.java</file>
+            <file>file:/C:/Users/Eugen/Desktop/git/soft252/Week07/PubSimulation%20with%20Factory%20Pattern/src/controller/Landlord.java</file>
+            <file>file:/C:/Users/Eugen/Desktop/git/soft252/Week07/PubSimulation%20with%20Factory%20Pattern/src/model/MakeCoffee.java</file>
+            <file>file:/C:/Users/Eugen/Desktop/git/soft252/Week07/PubSimulation%20with%20Factory%20Pattern/src/controller/DrinkFactory.java</file>
+            <file>file:/C:/Users/Eugen/Desktop/git/soft252/Week07/PubSimulation%20with%20Factory%20Pattern/src/model/SpiritDrink.java</file>
         </group>
     </open-files>
 </project-private>
